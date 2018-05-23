@@ -7,7 +7,7 @@
 ## Desarrollo Parcial  
 
 Antes de iniciar el desarrollo del parcial, crearemos un proyecto con la siguiente estructura:
-.  
+`.`  
 ├── `op_stats`  
 │   ├── `app.py`  
 │   ├── `__init__.py`  
