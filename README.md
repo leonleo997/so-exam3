@@ -48,7 +48,7 @@ class Stats():
     return disk_available
 
 ```  
-Ahora, en el archivo [`app.py`]((https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/op_stats/app.py) crearemos el API que se encargará de exponer los servicios de la anterior implementación:  
+Ahora, en el archivo [`app.py`](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/op_stats/app.py) crearemos el API que se encargará de exponer los servicios de la anterior implementación:  
 ```console
 #app.py 
 from flask import Flask
@@ -76,4 +76,13 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0',port=8080)
 
 ```  
+Una vez tenemos la implementación, y el api, usamos Postman para consumir los servicios que exponemos en `app.py`. Para esto, escribimos la ip (se puede ver usando `ip a`) junto con el puerto que se definió en el archivo y el nombre del servicio. Levantamos el servicio usando  
+```console
+operativos@Centos7:~/so-exam3$ python3 app.py 
+```
+A continuación, se muestran las capturas de la aplicación postman de cada servicio:  
+![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_RAM.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_DISK.PNG)  
+
 
