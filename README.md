@@ -6,7 +6,7 @@
 
 ## Desarrollo Parcial  
 
-Antes de iniciar el desarrollo del parcial, crearemos un proyecto con la siguiente estructura:
+Antes de iniciar el desarrollo del parcial, vemos que el examen tiene la siguiente estructura:
 .  
 ├── `op_stats`  
 │   ├── `app.py`  
@@ -22,15 +22,13 @@ Antes de iniciar el desarrollo del parcial, crearemos un proyecto con la siguien
 │   └── `test_stats.py`  
 └── `tox.ini`  
 
-
-
 # A. Implementación de un servicio Flask  
 
 En esta sección crearemos servicios para: conocer el consumo de la CPU, memoria RAM disponible, espacio disponible en disco. Para probar el funcionamiento del API usaremos Postman.  
 
-Primero, en el archivo llamado [`stats.py`](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/op_stats/stats.py) que tendrá la implementación de los servicios:  
+Primero, escribimos en el archivo llamado [`stats.py`](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/op_stats/stats.py) la implementación de los servicios:  
 ```console
-#Stats.py  
+#stats.py  
 import psutil
 
 class Stats():
@@ -50,4 +48,32 @@ class Stats():
     return disk_available
 
 ```  
-Ahora, en el archivo app.py crearemos el API que se encargará de exponer los servicios de la anterior implementación
+Ahora, en el archivo [`app.py`]((https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/op_stats/app.py) crearemos el API que se encargará de exponer los servicios de la anterior implementación:  
+```console
+#app.py 
+from flask import Flask
+import json
+import sys
+sys.path.append('/home/operativos/so-exam3')
+from op_stats.stats import Stats
+
+app = Flask(__name__)
+
+@app.route("/CPU")
+def CPU():
+    return json.dumps({'Consumo de CPU: ':Stats.get_cpu_percent()})
+
+@app.route("/RAM")
+def RAM():
+    return json.dumps({'RAM disponible: ':Stats.get_ram()})
+
+@app.route("/DISK")
+def DISK():
+    return json.dumps({'Disco disponible: ':Stats.get_disk()})
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0',port=8080)
+
+```  
+
