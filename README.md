@@ -18,7 +18,7 @@ Antes de iniciar el desarrollo del parcial, crearemos un proyecto con la siguien
 │   └── deploy.sh  
 ├── setup.py  
 ├── tests  
-│   ├── __init__.py  
+│   ├── `__init__.py`  
 │   └── test_stats.py  
 └── tox.ini  
 
