@@ -1,5 +1,5 @@
 
-# Segundo Parcial  
+# Tercer Parcial  
 **Nombre:** Yesid Leonardo López  
 **Código:** A00056408  
 **Correo:** yesid.lopez@correo.icesi.edu.co  
