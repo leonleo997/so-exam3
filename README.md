@@ -1,8 +1,14 @@
+
 # Segundo Parcial  
 **Nombre:** Yesid Leonardo López  
 **Código:** A00056408  
 **Correo:** yesid.lopez@correo.icesi.edu.co  
 **URL repositorio:** https://github.com/leonleo997/so-exam3.git  
+
+**Tabla de contenido**  
+- [A. Implementación de un servicio Flask](#a-implementaci%C3%B3n-de-un-servicio-flask)
+- [B. Implementación de pruebas unitarias](#b-implementaci%C3%B3n-de-pruebas-unitarias)
+- [C. Integración continua](#c-integraci%C3%B3n-continua)
 
 ## Desarrollo Parcial  
 
@@ -168,5 +174,5 @@ Al realizar un pull request al repositorio [so-exam3](https://github.com/ICESI-T
 ![](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/travis2.PNG)  
 ![](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/PullRequest.PNG)
 
-Lo anterior, muestra que las pruebas son exitosas. 
+Lo anterior, muestra que las pruebas fueron exitosas. 
 
