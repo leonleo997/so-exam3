@@ -81,9 +81,9 @@ Una vez tenemos la implementación, y el api, usamos Postman para consumir los s
 operativos@Centos7:~/so-exam3$ python3 app.py 
 ```
 A continuación, se muestran las capturas de la aplicación postman de cada servicio:  
-![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
-![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_RAM.PNG)  
-![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_DISK.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/POSTMAN_RAM.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/POSTMAN_DISK.PNG)  
 
 Vemos que se realizaron las peticiones correctamente:   
-![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
