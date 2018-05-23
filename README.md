@@ -85,4 +85,5 @@ A continuación, se muestran las capturas de la aplicación postman de cada serv
 ![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_RAM.PNG)  
 ![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_DISK.PNG)  
 
-
+Vemos que se realizaron las peticiones correctamente:   
+![alt text](https://github.com/leonleo997/so-exam3/tree/yesidlopez/exam3/Images/POSTMAN_CPU.PNG)  
