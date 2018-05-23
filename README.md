@@ -7,20 +7,20 @@
 ## Desarrollo Parcial  
 
 Antes de iniciar el desarrollo del parcial, crearemos un proyecto con la siguiente estructura:`
-`.`  
-`├── op_stats`  
-`│   ├── app.py`  
-`│   ├── __init__.py`  
-`│   └── stats.py`  
-`├── requirements_dev.txt`  
-`├── requirements.txt`  
-`├── scripts`  
-`│   └── deploy.sh`  
-`├── setup.py`  
-`├── tests`  
-`│   ├── __init__.py`  
-`│   └── test_stats.py`  
-`└── tox.ini`  
+.  
+├── `op_stats`  
+│   ├── `app.py`  
+│   ├── `__init__.py`  
+│   └── `stats.py`  
+├── `requirements_dev.txt`  
+├── `requirements.txt`  
+├── `scripts`  
+│   └── `deploy.sh`  
+├── `setup.py`  
+├── `tests`  
+│   ├── `__init__.py`  
+│   └── `test_stats.py`  
+└── `tox.ini`  
 
 
 
