@@ -5,7 +5,7 @@
 **Correo:** yesid.lopez@correo.icesi.edu.co  
 **URL repositorio:** https://github.com/leonleo997/so-exam3.git  
 
-**Tabla de contenido**  
+## **Tabla de contenido**  
 - [A. Implementación de un servicio Flask](#a-implementaci%C3%B3n-de-un-servicio-flask)
 - [B. Implementación de pruebas unitarias](#b-implementaci%C3%B3n-de-pruebas-unitarias)
 - [C. Integración continua](#c-integraci%C3%B3n-continua)
