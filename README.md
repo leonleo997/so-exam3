@@ -90,3 +90,83 @@ Servicio disco
 
 Vemos que se realizaron las peticiones correctamente:   
 ![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/pyton%20services.PNG)  
+
+
+# B. Implementación de pruebas unitarias  
+
+En esta sección haremos la implementación de pruebas unitarias. Para esto, escribimos en el archivo [`test_stats.py`](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/tests/test_stats.py) la implementación de las pruebas.  
+
+```console
+#test_stats.py
+import pytest
+from op_stats.app import app
+from op_stats.stats import Stats
+
+@pytest.fixture
+def client():
+  client = app.test_client()
+  return client
+
+def test_get_cpu_percent(mocker, client):
+  mocker.patch.object(Stats, 'get_cpu_percent', return_value=100)
+  response = client.get('/CPU')
+  assert response.data.decode('utf-8') == '{"Consumo de CPU: ": 100}'
+  assert response.status_code == 200
+
+def test_get_ram(mocker, client):
+  mocker.patch.object(Stats, 'get_ram', return_value=10)
+  response = client.get('/RAM')
+  assert response.data.decode('utf-8') == '{"RAM disponible: ": 10}'
+  assert response.status_code == 200
+
+def test_get_disk(mocker, client):
+  mocker.patch.object(Stats, 'get_disk', return_value=40)
+  response = client.get('/DISK')
+  assert response.data.decode('utf-8') == '{"Disco disponible: ": 40}'
+  assert response.status_code == 200
+```  
+Posteriormente, ejecutamos el comando ``pytest -v`` para correr las pruebas. Obtendremos el siguiente resultado:  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/runing_test.PNG)  
+
+# C. Integración continua  
+
+En esta sección haremos la integración continua. Para esto, escribimos lo siguiente en el archivo `tox.ini`  
+
+```console
+[tox]
+envlist = pytest 
+
+[testenv]
+basepython = python3
+
+[testenv:pytest]
+deps =
+  -rrequirements_dev.txt
+commands =
+  pytest
+
+```  
+Este archivo contiene el archivo de los paquetes necesarios y los comandos a ejecutar. Para ejecutarlo, escribimos el siguientes comando ``tox -e pytest`` para ejecutar las pruebas.  
+Vemos el resultado de la ejecución en la siguiente imagen  
+![alt text](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/tox%20-e.PNG)  
+
+Pasamos a escribir en el archivo `.travis.yml` el archivo de configuración para Travis (herramienta de integración continua).  
+```console
+sudo: false
+language: python
+notifications:
+  email: false
+python:
+- '3.4'
+install: pip install tox-travis
+script: tox -e pytest
+```  
+En este encontramos que el lenguaje con el que se ejecutará será python en su veersión 3.4. También, encontramos que se debe instalar tox-travis. Finalmente, sale el comando que debe ejecutar, en este caso: `tox -e pytest`.
+
+Al realizar un pull request al repositorio [so-exam3](https://github.com/ICESI-Training/so-exam3) se ejecutarán automaticamente las pruebas definidas en la sección B. Obtenemos el siguiente resultado en travis:  
+![](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/travis.PNG)  
+![](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/travis2.PNG)  
+![](https://github.com/leonleo997/so-exam3/blob/yesidlopez/exam3/Images/PullRequest.PNG)
+
+Lo anterior, muestra que las pruebas son exitosas. 
+
